@@ -1,12 +1,17 @@
 
 def bubble_sort(list_to_sort):
+    swap_count = 0
+
     for j in range (0, len(list_to_sort) - 1):
-        # print(list_to_sort[j])
         if list_to_sort[j] >= list_to_sort[j+1]:
             list_to_sort[j], list_to_sort[j+1] = list_to_sort[j+1], list_to_sort[j]
-            # print(list_to_sort[j])
-
-    print(list_to_sort)
+            swap_count += 1
+    
+    if swap_count >= 1:
+        swap_count = 0
+        bubble_sort(list_to_sort)
+    else:
+        print(list_to_sort)
 
 
 def configuration_function():
